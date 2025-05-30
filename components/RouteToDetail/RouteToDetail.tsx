@@ -1,4 +1,5 @@
 "use client";
+import styles from "./routeToDetail.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -10,7 +11,7 @@ const RouteToDetail = ({ id, children }: { id: number; children?: React.ReactNod
     }
     else{
         return (
-        <div onClick={() => router.push(`/detail/${id}`)}>
+        <div className={styles.food_container} onClick={() => router.push(`/detail/${id}`)}>
             {children}
         </div>
     );

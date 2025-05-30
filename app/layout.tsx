@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Link from "next/link";
 
 export const boldtextFont = localFont({
   src: [
@@ -41,7 +42,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${boldtextFont.variable} ${primaryFont.variable}`}>
+        <div className="layout_navbar_container">
+          <Link href={"/"} className="layout_logo_container">
+            <div className="layout_logo"></div>
+            <div className="layout_logo_text"></div>
+          </Link>
+          <Link href={"/bookmarks"} className="layout_save_icon"></Link>
+        </div>
         {children}
+        <div className="layout_footer_container">
+          <Link href={"/"} className="layout_logo_container">
+            <div className="layout_logo"></div>
+            <div className="layout_logo_text"></div>
+          </Link>
+        </div>
       </body>
     </html>
   );

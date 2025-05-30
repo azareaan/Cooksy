@@ -1,0 +1,10 @@
+.foodList{
+  width: 1375px;
+  min-height: 450px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, 325px);
+  grid-template-rows: repeat(auto-fit, 450px);
+  justify-content: center;
+  gap: 25px;
+}

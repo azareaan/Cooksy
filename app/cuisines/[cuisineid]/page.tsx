@@ -1,3 +1,4 @@
+import styles from "./cuisines.module.css";
 import FoodList from "@/components/FoodList/FoodList";
 import { FoodDetailCardProps } from "@/types/types";
 
@@ -50,7 +51,7 @@ const Cuisines = async ({params}: {params: {cuisineid: string}}) => {
     const cuisineFoods = await get_cuisine_food(cuisineid);
 
     return (
-        <div>
+        <div className={styles.food_list_container}>
             {!cuisineFoods || cuisineFoods.length === 0 ? (
                 <h2>No cuisineFoods found</h2>
             ) : (

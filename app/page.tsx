@@ -99,37 +99,47 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <header>
+      <header className={styles.header}>
         <h1>Recipe Finder</h1>
       </header>
 
-      <div>
+      <div className={styles.select_container}>
         <h2>Meal Types</h2>
-        <Link href="/mealtypes/maincourse">Main course</Link>
-        <Link href="/mealtypes/breakfast">Breakfast</Link>
-        <Link href="/mealtypes/dessert">Dessert</Link>
-        <Link href="/mealtypes/soup">Soup</Link>
+        <div>
+          <Link className={styles.select_card} href="/mealtypes/maincourse">Main course</Link>
+          <Link className={styles.select_card} href="/mealtypes/breakfast">Breakfast</Link>
+          <Link className={styles.select_card} href="/mealtypes/dessert">Dessert</Link>
+          <Link className={styles.select_card} href="/mealtypes/soup">Soup</Link>
+        </div>
       </div>
 
-      <div>
+      <div className={styles.select_container}>
         <h2>Cuisines</h2>
-        <Link href="/cuisines/italian">Italian Food</Link>
-        <Link href="/cuisines/chinese">Chinese Food</Link>
-        <Link href="/cuisines/mexican">Mexican Food</Link>
-        <Link href="/cuisines/american">American Food</Link>
+        <div>
+          <Link className={styles.select_card} href="/cuisines/italian">Italian Food</Link>
+          <Link className={styles.select_card} href="/cuisines/chinese">Chinese Food</Link>
+          <Link className={styles.select_card} href="/cuisines/mexican">Mexican Food</Link>
+          <Link className={styles.select_card} href="/cuisines/american">American Food</Link>
+        </div>
       </div>
 
 
       {!randomFoods || randomFoods.length === 0 ? (
         <h2>No randomFoods found</h2>
       ) : (
-        <FoodList foods={randomFoods} />
+        <div className={styles.food_list_container}>
+          <h2>Explore new foods</h2>
+          <FoodList foods={randomFoods} />
+        </div>
       )}
 
       {!mostPopularFoods || mostPopularFoods.length === 0 ? (
         <h2>No mostPopularFoods found</h2>
       ) : (
-        <FoodList foods={mostPopularFoods} />
+        <div className={styles.food_list_container}>
+          <h2>Most popular foods</h2>
+          <FoodList foods={mostPopularFoods} />
+        </div>
       )}
     </main>
   );

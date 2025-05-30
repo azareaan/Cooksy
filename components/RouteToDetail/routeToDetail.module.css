@@ -1,0 +1,12 @@
+.food_container{
+  width: 325px;
+  height: 450px;
+  border-radius: 25px;
+  background-color: var(--third-color);
+  box-shadow: 0px 0px 8px 0px color-mix(in srgb, var(--primary-color) 20%, transparent);
+  transition: 0.1s;
+}
+
+.food_container:hover{
+box-shadow: 0px 0px 10px 0px color-mix(in srgb, var(--primary-color) 40%, transparent);
+}
