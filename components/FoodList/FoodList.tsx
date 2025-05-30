@@ -1,14 +1,14 @@
-import { RecipeList } from '@/types/types';
+import { FoodDetailCardProps } from '@/types/types';
 import styles from './foodList.module.css';
 import FoodCard from '../FoodCard/FoodCard';
 
-const FoodList = ({recipes}: {recipes: RecipeList}) => {
+const FoodList = ({foods}: {foods: FoodDetailCardProps[]}) => {
     return (
         <div className={styles.foodList}>
-            {recipes.map((recipe) => (
+            {foods.map((food) => (
                 <FoodCard
-                    key={recipe.id}
-                    props={recipe}
+                    key={food.id}
+                    props={food}
                 />
             ))}
         </div>

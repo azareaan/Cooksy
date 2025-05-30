@@ -1,11 +1,18 @@
-export type RecipeList = {
-    id: number;
-    title: string;
-    image: string;
-}[];
-
-export type RecipeCardProps = {
-    id: number;
-    title: string;
-    image: string;
+export type FoodDetailCardProps = {
+    id: number,
+    title: string,
+    image: string,
+    sourceUrl: string,
+    vegetarian: boolean,
+    vegan: boolean,
+    veryHealthy: boolean,
+    cheap: boolean,
+    preparationMinutes: number,
+    readyInMinutes: number,
+    aggregateLikes: number,
+    healthScore: number,
+    extendedIngredients?: {
+        name: string,
+        original: string
+    }[]
 }
