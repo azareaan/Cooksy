@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}complexSearch?sort=random&number=4&addRecipeInformation=true&instructionsRequired=true&apiKey=${process.env.API_KEY}`,
+    const res = await fetch(`${process.env.BASE_URL}complexSearch?sort=random&number=4&instructionsRequired=true&addRecipeInformation=true&apiKey=${process.env.API_KEY}`,
       {
         next: {
           revalidate: 3600, // get new data every hour
@@ -21,6 +21,9 @@ const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
 
     const data = await res.json();
 
+    console.log(data);
+    
+
     const mapData = data.results.map((foodDetail: FoodDetailCardProps) => ({
       id: foodDetail.id,
       title: foodDetail.title,
@@ -34,10 +37,6 @@ const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
       readyInMinutes: foodDetail.readyInMinutes,
       aggregateLikes: foodDetail.aggregateLikes,
       healthScore: foodDetail.healthScore,
-      extendedIngredients: foodDetail.extendedIngredients?.map((ingredient) => ({
-        name: ingredient.name,
-        original: ingredient.original
-      })) ?? [],
     }));
 
 
@@ -51,7 +50,7 @@ const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
 
 const get_4most_popular_food = async (): Promise<FoodDetailCardProps[]> => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}complexSearch?sort=popularity&number=4&addRecipeInformation=true&instructionsRequired=true&apiKey=${process.env.API_KEY}`,
+    const res = await fetch(`${process.env.BASE_URL}complexSearch?sort=popularity&number=4&instructionsRequired=true&addRecipeInformation=true&apiKey=${process.env.API_KEY}`,
       {
         next: {
           revalidate: 86400, // get new data every day
@@ -78,10 +77,6 @@ const get_4most_popular_food = async (): Promise<FoodDetailCardProps[]> => {
       readyInMinutes: foodDetail.readyInMinutes,
       aggregateLikes: foodDetail.aggregateLikes,
       healthScore: foodDetail.healthScore,
-      extendedIngredients: foodDetail.extendedIngredients?.map((ingredient) => ({
-        name: ingredient.name,
-        original: ingredient.original
-      })) ?? [],
     }));
 
 

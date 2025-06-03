@@ -4,7 +4,7 @@ import { FoodDetailCardProps } from "@/types/types";
 
 const get_cuisine_food = async (cuisine: string): Promise<FoodDetailCardProps[]> => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}complexSearch?cuisine=${cuisine}&number=12&apiKey=${process.env.API_KEY}`,
+    const res = await fetch(`${process.env.BASE_URL}complexSearch?sort=popularity&cuisine=${cuisine}&number=12&instructionsRequired=true&apiKey=${process.env.API_KEY}`,
       {
         next: {
           revalidate: 86400, // get new data every day

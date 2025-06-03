@@ -20,9 +20,10 @@ const RecipeDetail = async ({params}: {params: {recipeid: string}}) => {
     const param_temp = await params;
     const recipeid = param_temp.recipeid;
     const detail = await getDetail(recipeid);
-    
     return (
-        <h1>{detail.title}</h1>
+        <>
+          <h1>{detail.title}</h1>
+        </>
     );
 };
 

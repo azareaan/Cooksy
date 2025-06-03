@@ -1,6 +1,6 @@
 const BookMark = () => {
     return (
-        <h1 style={{ marginTop: "100px" }}>Book Mark Page</h1>
+        <h1>Book Mark Page</h1>
     );
 }
 

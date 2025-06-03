@@ -1,7 +1,7 @@
 .food_list_container{
   width: 1375px;
   min-height: 510px;
-  margin: 100px auto;
+  margin: 50px auto;
 
   display: flex;
   flex-flow: column;
