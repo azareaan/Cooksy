@@ -22,7 +22,6 @@ const get_meal_food = async (meal: string): Promise<FoodDetailCardProps[]> => {
       id: foodDetail.id,
       title: foodDetail.title,
       image: foodDetail.image,
-      sourceUrl: foodDetail.sourceUrl,
       vegetarian: foodDetail.vegetarian,
       vegan: foodDetail.vegan,
       veryHealthy: foodDetail.veryHealthy,
@@ -31,10 +30,6 @@ const get_meal_food = async (meal: string): Promise<FoodDetailCardProps[]> => {
       readyInMinutes: foodDetail.readyInMinutes,
       aggregateLikes: foodDetail.aggregateLikes,
       healthScore: foodDetail.healthScore,
-      extendedIngredients: foodDetail.extendedIngredients?.map((ingredient) => ({
-        name: ingredient.name,
-        original: ingredient.original
-      })) ?? [],
     }));
 
 

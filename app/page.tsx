@@ -19,16 +19,12 @@ const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
       return [];
     }
 
-    const data = await res.json();
-
-    console.log(data);
-    
+    const data = await res.json();    
 
     const mapData = data.results.map((foodDetail: FoodDetailCardProps) => ({
       id: foodDetail.id,
       title: foodDetail.title,
       image: foodDetail.image,
-      sourceUrl: foodDetail.sourceUrl,
       vegetarian: foodDetail.vegetarian,
       vegan: foodDetail.vegan,
       veryHealthy: foodDetail.veryHealthy,
@@ -68,7 +64,6 @@ const get_4most_popular_food = async (): Promise<FoodDetailCardProps[]> => {
       id: foodDetail.id,
       title: foodDetail.title,
       image: foodDetail.image,
-      sourceUrl: foodDetail.sourceUrl,
       vegetarian: foodDetail.vegetarian,
       vegan: foodDetail.vegan,
       veryHealthy: foodDetail.veryHealthy,
