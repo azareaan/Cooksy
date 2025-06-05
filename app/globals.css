@@ -52,7 +52,7 @@ a {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  background-color: color-mix(in srgb, var(--third-color) 80%, transparent);
+  background-color: color-mix(in srgb, var(--light-background) 70%, transparent);
   -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
 

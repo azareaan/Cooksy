@@ -33,3 +33,7 @@ export type RecipeDetails = {
         steps: {step: string}[]
     }[]
 }
+
+export type SearchPageProps = {
+  searchParams: { q: string; type: 'query' | 'includeIngredients' | 'excludeIngredients' };
+}

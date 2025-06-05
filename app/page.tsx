@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import { FoodDetailCardProps } from "@/types/types";
 import Link from "next/link";
 import Image from "next/image";
+import SearchForm from "@/components/SearchForm/SearchForm";
 
 const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
   try {
@@ -87,7 +88,11 @@ export default async function Home() {
   return (
     <main className={styles.main}>
       <header className={styles.header}>
+        <div className={styles.header_background}>
+          <div className={styles.header_fade_for_background}></div>
+        </div>
         <h1>Recipe Finder</h1>
+        <SearchForm />
       </header>
 
       <div className={styles.select_container}>
@@ -144,7 +149,7 @@ export default async function Home() {
 
 
       {!randomFoods || randomFoods.length === 0 ? (
-        <h2>No randomFoods found</h2>
+        <h2>No random Foods found</h2>
       ) : (
         <div className={styles.food_list_container}>
           <h2>Explore new foods</h2>
@@ -153,7 +158,7 @@ export default async function Home() {
       )}
 
       {!mostPopularFoods || mostPopularFoods.length === 0 ? (
-        <h2>No mostPopularFoods found</h2>
+        <h2>No mostPopular Foods found</h2>
       ) : (
         <div className={styles.food_list_container}>
           <h2>Most popular foods</h2>

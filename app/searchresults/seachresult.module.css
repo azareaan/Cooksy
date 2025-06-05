@@ -1,0 +1,17 @@
+.search_result_container{
+    width: 1375px;
+    min-height: 550px;
+    margin: 50px auto;
+
+    display: flex;
+    flex-flow: column;
+}
+
+.search_result_text{
+    margin: 50px 0px;
+    font-family: boldtextFont;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 50px;
+    color: var(--primary-text-color);
+}
