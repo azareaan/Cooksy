@@ -2,6 +2,7 @@ import FoodList from "@/components/FoodList/FoodList";
 import styles from "./page.module.css";
 import { FoodDetailCardProps } from "@/types/types";
 import Link from "next/link";
+import Image from "next/image";
 
 const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
   try {
@@ -29,10 +30,8 @@ const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
       vegan: foodDetail.vegan,
       veryHealthy: foodDetail.veryHealthy,
       cheap: foodDetail.cheap,
-      preparationMinutes: foodDetail.preparationMinutes,
       readyInMinutes: foodDetail.readyInMinutes,
       aggregateLikes: foodDetail.aggregateLikes,
-      healthScore: foodDetail.healthScore,
     }));
 
 
@@ -68,10 +67,8 @@ const get_4most_popular_food = async (): Promise<FoodDetailCardProps[]> => {
       vegan: foodDetail.vegan,
       veryHealthy: foodDetail.veryHealthy,
       cheap: foodDetail.cheap,
-      preparationMinutes: foodDetail.preparationMinutes,
       readyInMinutes: foodDetail.readyInMinutes,
       aggregateLikes: foodDetail.aggregateLikes,
-      healthScore: foodDetail.healthScore,
     }));
 
 
@@ -96,20 +93,52 @@ export default async function Home() {
       <div className={styles.select_container}>
         <h2>Meal Types</h2>
         <div>
-          <Link className={styles.select_card} href="/mealtypes/maincourse">Main course</Link>
-          <Link className={styles.select_card} href="/mealtypes/breakfast">Breakfast</Link>
-          <Link className={styles.select_card} href="/mealtypes/dessert">Dessert</Link>
-          <Link className={styles.select_card} href="/mealtypes/soup">Soup</Link>
+          <Link className={styles.select_card} href="/mealtypes/maincourse">
+            <Image width={325} height={450} src="/images/itallianfood.png" alt="Main course" className={styles.select_card_image}/>
+            <h2>Main course</h2>
+            <p>explore more foods</p>
+          </Link>
+          <Link className={styles.select_card} href="/mealtypes/breakfast">
+            <Image width={325} height={450} src="/images/itallianfood.png" alt="Main course" className={styles.select_card_image}/>
+            <h2>Breakfast</h2>
+            <p>explore more foods</p>
+          </Link>
+          <Link className={styles.select_card} href="/mealtypes/dessert">
+            <Image width={325} height={450} src="/images/itallianfood.png" alt="Main course" className={styles.select_card_image}/>
+            <h2>Dessert</h2>
+            <p>explore more foods</p>
+          </Link>
+          <Link className={styles.select_card} href="/mealtypes/soup">
+            <Image width={325} height={450} src="/images/itallianfood.png" alt="Main course" className={styles.select_card_image}/>
+            <h2>Soup</h2>
+            <p>explore more foods</p>
+          </Link>
         </div>
       </div>
 
       <div className={styles.select_container}>
         <h2>Cuisines</h2>
         <div>
-          <Link className={styles.select_card} href="/cuisines/italian">Italian Food</Link>
-          <Link className={styles.select_card} href="/cuisines/chinese">Chinese Food</Link>
-          <Link className={styles.select_card} href="/cuisines/mexican">Mexican Food</Link>
-          <Link className={styles.select_card} href="/cuisines/american">American Food</Link>
+          <Link className={styles.select_card} href="/cuisines/italian">
+            <Image width={325} height={450} src="/images/itallianfood.png" alt="Main course" className={styles.select_card_image}/>
+            <h2>Italian Food</h2>
+            <p>explore more foods</p>
+          </Link>
+          <Link className={styles.select_card} href="/cuisines/chinese">
+            <Image width={325} height={450} src="/images/itallianfood.png" alt="Main course" className={styles.select_card_image}/>
+            <h2>Chinese Food</h2>
+            <p>explore more foods</p>
+          </Link>
+          <Link className={styles.select_card} href="/cuisines/mexican">
+            <Image width={325} height={450} src="/images/itallianfood.png" alt="Main course" className={styles.select_card_image}/>
+            <h2>Mexican Food</h2>
+            <p>explore more foods</p>
+          </Link>
+          <Link className={styles.select_card} href="/cuisines/american">
+            <Image width={325} height={450} src="/images/americanfood.png" alt="Main course" className={styles.select_card_image}/>
+            <h2>American Food</h2>
+            <p>explore more foods</p>
+          </Link>
         </div>
       </div>
 

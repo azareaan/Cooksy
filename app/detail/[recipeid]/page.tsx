@@ -10,7 +10,7 @@ const getDetail = async (recipeid: string) : Promise<RecipeDetails | null> => {
 
     const data = await res.json();
 
-    const mapData = {
+    const mapData: RecipeDetails = {
       id: data.id,
       title: data.title,
       image: data.image,
@@ -21,9 +21,7 @@ const getDetail = async (recipeid: string) : Promise<RecipeDetails | null> => {
       vegan: data.vegan,
       veryHealthy: data.veryHealthy,
       cheap: data.cheap,
-      preparationMinutes: data.preparationMinutes,
       aggregateLikes: data.aggregateLikes,
-      healthScore: data.healthScore,
       extendedIngredients: data.extendedIngredients?.map((ingredient: any) => ({
       name: ingredient.name,
       original: ingredient.original

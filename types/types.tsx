@@ -6,10 +6,8 @@ export type FoodDetailCardProps = {
     vegan: boolean,
     veryHealthy: boolean,
     cheap: boolean,
-    preparationMinutes: number,
     readyInMinutes: number,
     aggregateLikes: number,
-    healthScore: number,
 }
 
 export type RecipeDetails = {
@@ -23,9 +21,7 @@ export type RecipeDetails = {
     vegan: boolean,
     veryHealthy: boolean,
     cheap: boolean,
-    preparationMinutes: number,
     aggregateLikes: number,
-    healthScore: number,
     extendedIngredients: {
         name: string,
         original: string

@@ -1,9 +1,121 @@
 .food_card_container{
-  width: 325px;
+  width: 100%;
   height: 100%;
   border-radius: 25px;
-  background-color: var(--third-color);
+  padding: 15px;
+  background-color: var(--light-background);
   box-shadow: 0px 0px 8px 0px color-mix(in srgb, var(--primary-color) 20%, transparent);
   transition: 0.1s;
   overflow: hidden;
+  position: relative;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card_image{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 10px;
+}
+
+.card_title{
+  max-height: 48px;
+  font-family: boldtextFont;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  line-height: 24px;
+  margin-top: 8px;
+  margin-bottom: 3px;
+
+  overflow: hidden;
+}
+
+.card_prop{
+  width: 100%;
+  height: 27px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  
+  overflow: hidden;
+}
+
+.card_prop_icon{
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+  object-position: center;
+  margin-right: 5px;
+}
+
+.card_prop p{
+  font-family: primaryFont;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  line-height: 16px;
+}
+
+.card_bool_container{
+  width: calc(100% - 30px);
+  height: 70px;
+  margin-bottom: 5px;
+
+  position: absolute;
+  left: 15px;
+  bottom: 70px;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: end;
+}
+
+.card_bool{
+  min-width: 25px;
+  height: 30px;
+  border-radius: 25px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--third-color);
+  padding: 4px;
+  padding-right: 6px;
+  margin-top: 5px;
+  margin-right: 5px;
+  transition: 0.1s;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  
+  overflow: hidden;
+}
+
+.card_bool:hover{
+  background-color: var(--secondary-color);
+}
+
+.card_bool_icon{
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+  object-position: center;
+  margin-right: 5px;
+}
+
+.card_bool p{
+  font-family: primaryFont;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  line-height: 16px;
+  transition: 0.1S;
+}
+
+.card_bool:hover p{
+  color: var(--third-color);
 }

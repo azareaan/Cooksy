@@ -4,7 +4,7 @@ import { FoodDetailCardProps } from "@/types/types";
 
 const get_cuisine_food = async (cuisine: string): Promise<FoodDetailCardProps[]> => {
   try {
-    const res = await fetch(`${process.env.BASE_URL}complexSearch?sort=popularitycuisine=${cuisine}&number=12&instructionsRequired=true&apiKey=${process.env.API_KEY}`,
+    const res = await fetch(`${process.env.BASE_URL}complexSearch?sort=popularity&cuisine=${cuisine}&number=12&instructionsRequired=true&addRecipeInformation=true&apiKey=${process.env.API_KEY}`,
       {
         next: {
           revalidate: 86400, // get new data every day
@@ -16,7 +16,7 @@ const get_cuisine_food = async (cuisine: string): Promise<FoodDetailCardProps[]>
       return [];
     }
 
-    const data = await res.json();
+    const data = await res.json();    
 
     const mapData = data.results.map((foodDetail: FoodDetailCardProps) => ({
       id: foodDetail.id,
@@ -26,10 +26,8 @@ const get_cuisine_food = async (cuisine: string): Promise<FoodDetailCardProps[]>
       vegan: foodDetail.vegan,
       veryHealthy: foodDetail.veryHealthy,
       cheap: foodDetail.cheap,
-      preparationMinutes: foodDetail.preparationMinutes,
       readyInMinutes: foodDetail.readyInMinutes,
       aggregateLikes: foodDetail.aggregateLikes,
-      healthScore: foodDetail.healthScore,
     }));
 
 
