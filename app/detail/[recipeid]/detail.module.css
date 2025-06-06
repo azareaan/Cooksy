@@ -40,30 +40,6 @@
     top: 100px;
 }
 
-.save_icon{
-    width: 35px;
-    height: 35px;
-    mask-image: url(../../../public/icon/bookmark_outline.png);
-    mask-position: center;
-    mask-repeat: no-repeat;
-    mask-size: contain;
-    background-color: var(--primary-color);
-    transition: 0.1s;
-    cursor: pointer;
-
-    position: absolute;
-    top: 5px;
-    right: -25px;
-}
-
-.save_icon:hover{
-  background-color: var(--secondary-color);
-}
-
-.saved{
-  mask-image: url(../../../public/icon/bookmark.png);
-}
-
 .source_link{
     width: 26px;
     height: 26px;
@@ -78,7 +54,7 @@
 
     position: absolute;
     top: 60px;
-    right: -21px;
+    right: -26px;
 }
 
 .source_link:hover{
@@ -208,16 +184,17 @@
 }
 
 .detail_recipe_list{
-    width: 100%;
+    width: calc(100% - 30px);
     display: flex;
     flex-flow: column nowrap;
-    gap: 15px;
-    margin-left: 15px;
+    gap: 11px;
+    margin-left: 30px;
 }
 
 .detail_instruction_container .detail_recipe_list{
+  width: calc(100% - 15px);
     list-style: none;
-    margin-left: 0px;
+    margin-left: 15px;
 }
 
 .detail_ingredient_item{
@@ -225,7 +202,7 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--primary-text-color);
-    line-height: 16px;
+    line-height: 22px;
 }
 
 .detail_instruction_item_container{
@@ -246,5 +223,5 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--primary-text-color);
-    line-height: 16px;
+    line-height: 22px;
 }
