@@ -92,16 +92,16 @@ a {
 .layout_save_icon{
   width: 25px;
   height: 25px;
-  mask-image: url(../public/images/bookmark.png);
+  mask-image: url(../public/icon/bookmark.png);
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   transition: 0.1s;
 }
 
 .layout_save_icon:hover{
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 
 .layout_footer_container{
