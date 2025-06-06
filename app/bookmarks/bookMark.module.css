@@ -16,9 +16,9 @@
   flex-flow: column;
 }
 
-.food_list_container{
+.food_list_container h2{
     font-family: primaryFont;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     color: var(--primary-text-color);
 }

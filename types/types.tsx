@@ -35,5 +35,5 @@ export type RecipeDetails = {
 }
 
 export type SearchPageProps = {
-  searchParams: { q: string; type: 'query' | 'includeIngredients' | 'excludeIngredients' };
+  searchParams: Promise<{ q: string; type: 'query' | 'includeIngredients' | 'excludeIngredients' }>;
 }

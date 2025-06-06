@@ -62,7 +62,7 @@ a {
   z-index: 100;
 }
 
-.layout_logo_container{
+.layout_navbar_logo_container{
   width: 150px;
   height: 40px;
   display: flex;
@@ -71,7 +71,7 @@ a {
   align-items: end;
 }
 
-.layout_logo{
+.layout_navbar_logo{
   width: 40px;
   height: 40px;
   background-image: url(../public/images/cooksy_icon.svg);
@@ -80,7 +80,7 @@ a {
   background-size: contain;
 }
 
-.layout_logo_text{
+.layout_navbar_logo_text{
   width: 100px;
   height: 40px;
   background-image: url(../public/images/cooksy_text.svg);
@@ -89,19 +89,20 @@ a {
   background-size: contain;
 }
 
-.layout_save_icon{
-  width: 25px;
-  height: 25px;
-  mask-image: url(../public/icon/bookmark.png);
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  background-color: var(--primary-color);
-  transition: 0.1s;
+.layout_navbar_container div{
+  padding-right: 20px;
 }
 
-.layout_save_icon:hover{
-  background-color: var(--secondary-color);
+.layout_navbar_menu_item{
+  font-family: primaryFont;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  margin-left: 15px;
+}
+
+.layout_navbar_menu_item:hover{
+  text-decoration: underline;
 }
 
 .layout_footer_container{

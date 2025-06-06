@@ -38,19 +38,22 @@ const get_meal_food = async (meal: string): Promise<FoodDetailCardProps[]> => {
   }
 };
 
-const MealTypes = async ({params}: {params: {mealid: string}}) => {
+const MealTypes = async ({params}: {params: Promise<{mealid: string}>}) => {
     const param_temp = await params;
     const mealid = param_temp.mealid;
     const mealFoods = await get_meal_food(mealid);
 
     return (
-        <div className={styles.food_list_container}>
-            {!mealFoods || mealFoods.length === 0 ? (
-                <h2>No mealFoods found</h2>
-            ) : (
-                <FoodList foods={mealFoods} />
-            )}
-        </div>
+      <main className={styles.meal_page}>
+          <h1>{mealid}</h1>
+          <div className={styles.food_list_container}>
+              {!mealFoods || mealFoods.length === 0 ? (
+                  <h2>No mealFoods found</h2>
+              ) : (
+                  <FoodList foods={mealFoods} />
+              )}
+          </div>
+      </main>
     );
 };
 
