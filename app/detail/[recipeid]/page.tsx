@@ -49,7 +49,7 @@ const getDetail = async (recipeid: string) : Promise<RecipeDetails | null> => {
   }
 }
 
-const RecipeDetail = async ({params}: {params: {recipeid: string}}) => {
+const RecipeDetail = async ({params}: {params: Promise<{recipeid: string}>}) => {
     const param_temp = await params;
     const recipeid = param_temp.recipeid;
     const detail = await getDetail(recipeid);

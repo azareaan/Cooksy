@@ -10,7 +10,7 @@ const get_4random_food = async (): Promise<FoodDetailCardProps[]> => {
     const res = await fetch(`${process.env.BASE_URL}complexSearch?sort=random&number=4&instructionsRequired=true&addRecipeInformation=true&apiKey=${process.env.API_KEY}`,
       {
         next: {
-          revalidate: 3600, // get new data every hour
+          revalidate: 60, // get new data every minutes
         },
 
         // cache: "no-store", // get random data by every reload
