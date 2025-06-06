@@ -56,7 +56,7 @@ const RecipeDetail = async ({params}: {params: {recipeid: string}}) => {
 
     if (!detail) {
       return (
-        <main className={styles.detail_container}>
+        <main className={styles.detail_container_not_found}>
           <h1 className={styles.detail_title}>Recipe not found.</h1>
         </main>
       );

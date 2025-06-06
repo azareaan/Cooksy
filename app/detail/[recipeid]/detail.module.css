@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+.detail_container_not_found{
+    width: 100%;
+    min-height: calc(100vh - 160px);
+    padding: 120px 50px;
+}
+
 .detail_image{
     width: 90%;
     height: 600px;
