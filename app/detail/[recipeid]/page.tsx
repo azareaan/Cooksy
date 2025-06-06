@@ -2,6 +2,7 @@ import { RecipeDetails } from "@/types/types";
 import styles from './detail.module.css';
 import Image from "next/image";
 import Link from "next/link";
+import Booking from "@/components/BookMark/BookMark";
 
 const getDetail = async (recipeid: string) : Promise<RecipeDetails | null> => {
     try {
@@ -66,7 +67,7 @@ const RecipeDetail = async ({params}: {params: {recipeid: string}}) => {
           <Image width={1680} height={600} src={detail.image} alt={detail.title} className={styles.detail_image}/>
           <div className={styles.detail_container}>
             <div className={styles.save_icon_container}>
-              <div className={styles.save_icon}></div>
+              <Booking recipe_detail={detail} />
               <Link href={detail.sourceUrl} className={styles.source_link} />
             </div>
             <h1 className={styles.detail_title}>{detail.title}</h1>
